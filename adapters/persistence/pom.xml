@@ -12,6 +12,10 @@
     <packaging>jar</packaging>
     <artifactId>persistence</artifactId>
 
+    <properties>
+        <embedded.mongo>2.2.0</embedded.mongo>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -21,6 +25,7 @@
         <dependency>
             <groupId>de.flapdoodle.embed</groupId>
             <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <version>${embedded.mongo}</version>
         </dependency>
     </dependencies>
 
