@@ -3,6 +3,6 @@
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/web/src/main/java/br/gabrielsmartins/smartpayment/adapters/web/controller/customers/SearchCustomerController.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/web/src/main/java/br/gabrielsmartins/smartpayment/adapters/web/controller/customers/SaveCustomerController.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/web/src/main/java/br/gabrielsmartins/smartpayment/adapters/web/dto/customers/CustomerDTO.java
-/home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/web/src/main/java/br/gabrielsmartins/smartpayment/adapters/web/dto/CategoryDTO.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/web/src/main/java/br/gabrielsmartins/smartpayment/adapters/web/controller/categories/SearchCategoryController.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/web/src/main/java/br/gabrielsmartins/smartpayment/adapters/web/controller/categories/SaveCategoryController.java
+/home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/web/src/main/java/br/gabrielsmartins/smartpayment/adapters/web/dto/categories/CategoryDTO.java

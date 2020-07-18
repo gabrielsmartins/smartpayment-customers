@@ -5,11 +5,12 @@ import br.gabrielsmartins.smartpayment.adapters.persistence.entity.customers.Cus
 import br.gabrielsmartins.smartpayment.application.domain.enums.DocumentType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -17,10 +18,9 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
 
-@SpringBootTest(classes = {PersistenceApplicationTest.class})
+@ExtendWith(SpringExtension.class)
+@DataMongoTest
 @ActiveProfiles("test")
 public class CustomerRepositoryTest {
 
@@ -45,8 +45,6 @@ public class CustomerRepositoryTest {
                 .withDocumentType(DocumentType.CNPJ)
                 .build();
 
-        when(repository.save(customerEntity)).thenAnswer(invocationOnMock -> invocationOnMock.getArgument(0));
-
         CustomerEntity savedCustomer = repository.save(customerEntity);
 
         assertThat(savedCustomer).isNotNull();
@@ -69,7 +67,7 @@ public class CustomerRepositoryTest {
                 .withDocumentType(DocumentType.CNPJ)
                 .build();
 
-        when(repository.findAll()).thenReturn(Arrays.asList(customerEntity));
+        repository.save(customerEntity);
 
         List<CustomerEntity> customerEntities = repository.findAll();
         assertFalse(customerEntities.isEmpty());
@@ -92,9 +90,9 @@ public class CustomerRepositoryTest {
                 .withDocumentType(DocumentType.CNPJ)
                 .build();
 
-        when(repository.findById(anyString())).thenReturn(Optional.ofNullable(customerEntity));
+        repository.save(customerEntity);
 
-        Optional<CustomerEntity> optionalCustomerEntity = repository.findById(UUID.randomUUID().toString());
+        Optional<CustomerEntity> optionalCustomerEntity = repository.findById(customerEntity.getId());
         assertTrue(optionalCustomerEntity.isPresent());
     }
 }

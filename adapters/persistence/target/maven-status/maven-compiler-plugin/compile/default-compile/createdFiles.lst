@@ -9,6 +9,7 @@ br/gabrielsmartins/smartpayment/adapters/persistence/service/categories/ISaveCat
 br/gabrielsmartins/smartpayment/adapters/persistence/service/categories/ISearchCategoryPersistenceService.class
 br/gabrielsmartins/smartpayment/adapters/persistence/adapter/categories/SaveCategoryPersistenceAdapter.class
 br/gabrielsmartins/smartpayment/adapters/persistence/mapper/customers/CustomerPersistenceMapper.class
+br/gabrielsmartins/smartpayment/adapters/persistence/config/DatabaseConfiguration.class
 br/gabrielsmartins/smartpayment/adapters/persistence/service/categories/SearchCategoryPersistenceService.class
 br/gabrielsmartins/smartpayment/adapters/persistence/repository/categories/CategoryRepository.class
 br/gabrielsmartins/smartpayment/adapters/persistence/service/customers/SaveCustomerPersistenceService.class

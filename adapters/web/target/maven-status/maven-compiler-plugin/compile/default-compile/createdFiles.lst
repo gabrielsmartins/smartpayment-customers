@@ -1,3 +1,4 @@
+br/gabrielsmartins/smartpayment/adapters/web/dto/categories/CategoryDTO$CategoryDTOBuilder.class
 br/gabrielsmartins/smartpayment/adapters/web/controller/categories/SearchCategoryController.class
 br/gabrielsmartins/smartpayment/adapters/web/mapper/categories/CategoryWebMapper.class
 br/gabrielsmartins/smartpayment/adapters/web/dto/customers/CustomerDTO.class
@@ -7,6 +8,5 @@ br/gabrielsmartins/smartpayment/adapters/web/controller/customers/SaveCustomerCo
 br/gabrielsmartins/smartpayment/adapters/web/mapper/customers/CustomerWebMapperImpl.class
 br/gabrielsmartins/smartpayment/adapters/web/mapper/categories/CategoryWebMapperImpl.class
 br/gabrielsmartins/smartpayment/adapters/web/controller/categories/SaveCategoryController.class
-br/gabrielsmartins/smartpayment/adapters/web/dto/CategoryDTO.class
-br/gabrielsmartins/smartpayment/adapters/web/dto/CategoryDTO$CategoryDTOBuilder.class
+br/gabrielsmartins/smartpayment/adapters/web/dto/categories/CategoryDTO.class
 br/gabrielsmartins/smartpayment/adapters/web/controller/customers/SearchCustomerController.class

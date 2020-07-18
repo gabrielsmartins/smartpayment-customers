@@ -1,3 +1,5 @@
+package br.gabrielsmartins.smartpayment.adapters.persistence;
+
 import br.gabrielsmartins.smartpayment.adapters.persistence.repository.categories.CategoryRepository;
 import br.gabrielsmartins.smartpayment.adapters.persistence.repository.customers.CustomerRepository;
 import org.springframework.boot.SpringApplication;
