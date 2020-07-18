@@ -10,7 +10,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder(setterPrefix = "with")
 public class Customer {
 
     private String id;

@@ -12,7 +12,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SearchCustomerPersistenceService implements ISearchCustomerPersistenceService {
 
-    private CustomerRepository repository;
+    private final CustomerRepository repository;
 
     @Override
     public Optional<CustomerEntity> findById(String id) {

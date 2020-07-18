@@ -7,7 +7,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder(setterPrefix = "with")
 public class CategoryEntity {
 
     private String id;

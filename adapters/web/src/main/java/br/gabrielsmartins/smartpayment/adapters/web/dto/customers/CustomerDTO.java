@@ -8,7 +8,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
+@Builder(setterPrefix = "with")
 public class CustomerDTO {
 
     @JsonProperty(value = "id", access = JsonProperty.Access.READ_ONLY)

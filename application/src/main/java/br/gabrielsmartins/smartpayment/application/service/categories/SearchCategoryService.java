@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SearchCategoryService implements SearchCategoryUseCase {
 
-    private SearchCategoryPort port;
+    private final SearchCategoryPort port;
 
     @Override
     public Optional<Category> findById(String id) {

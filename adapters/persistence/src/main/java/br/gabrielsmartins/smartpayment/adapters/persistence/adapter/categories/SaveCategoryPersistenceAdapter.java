@@ -15,7 +15,6 @@ public class SaveCategoryPersistenceAdapter implements SaveCategoryPort {
     private final SaveCategoryPersistenceService service;
     private final CategoryPersistenceMapper mapper;
 
-
     @Override
     public Category save(Category category) {
         CategoryEntity categoryEntity = mapper.mapToEntity(category);

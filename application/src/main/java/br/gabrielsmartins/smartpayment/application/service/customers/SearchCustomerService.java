@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SearchCustomerService implements SearchCustomerUseCase {
 
-    private SearchCustomerPort port;
+    private final SearchCustomerPort port;
 
     @Override
     public Optional<Customer> findById(String id) {

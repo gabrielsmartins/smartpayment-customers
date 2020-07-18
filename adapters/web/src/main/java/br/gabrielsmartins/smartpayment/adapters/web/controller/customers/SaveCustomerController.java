@@ -5,7 +5,7 @@ import br.gabrielsmartins.smartpayment.adapters.web.dto.customers.CustomerDTO;
 import br.gabrielsmartins.smartpayment.adapters.web.mapper.customers.CustomerWebMapper;
 import br.gabrielsmartins.smartpayment.application.domain.customers.Customer;
 import br.gabrielsmartins.smartpayment.application.ports.input.customers.SaveCustomerUseCase;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,17 +15,17 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/customers")
-@RequiredArgsConstructor
-public class CustomerController {
+@AllArgsConstructor
+public class SaveCustomerController {
 
-    private SaveCustomerUseCase saveCustomerUseCase;
+    private SaveCustomerUseCase useCase;
     private CustomerWebMapper mapper;
 
     @PostMapping
     public ResponseEntity<?> save(@RequestHeader HttpHeaders httpHeaders, @RequestBody CustomerDTO customerDTORequest){
 
         Customer customer = mapper.mapToDomain(customerDTORequest);
-        Customer savedCustomer = saveCustomerUseCase.save(customer);
+        Customer savedCustomer = useCase.save(customer);
 
         CustomerDTO customerDTOResponse = mapper.mapToDto(savedCustomer);
 

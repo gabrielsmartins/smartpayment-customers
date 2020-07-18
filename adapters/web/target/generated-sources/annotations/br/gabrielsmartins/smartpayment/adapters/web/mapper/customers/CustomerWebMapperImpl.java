@@ -1,16 +1,16 @@
 package br.gabrielsmartins.smartpayment.adapters.web.mapper.customers;
 
 import br.gabrielsmartins.smartpayment.adapters.web.dto.customers.CustomerDTO;
-import br.gabrielsmartins.smartpayment.adapters.web.dto.customers.CustomerDTO.CustomerDTOBuilder;
 import br.gabrielsmartins.smartpayment.application.domain.customers.Customer;
-import br.gabrielsmartins.smartpayment.application.domain.customers.Customer.CustomerBuilder;
 import br.gabrielsmartins.smartpayment.application.domain.enums.DocumentType;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-07-12T21:11:19-0300",
+    date = "2020-07-18T14:48:59-0300",
     comments = "version: 1.3.1.Final, compiler: javac, environment: Java 11.0.7 (Ubuntu)"
 )
 @Component
@@ -22,16 +22,30 @@ public class CustomerWebMapperImpl implements CustomerWebMapper {
             return null;
         }
 
-        CustomerBuilder customer = Customer.builder();
+        Customer customer = new Customer();
 
-        customer.id( customerDTO.getId() );
-        customer.name( customerDTO.getName() );
+        customer.setId( customerDTO.getId() );
+        customer.setName( customerDTO.getName() );
         if ( customerDTO.getDocumentType() != null ) {
-            customer.documentType( Enum.valueOf( DocumentType.class, customerDTO.getDocumentType() ) );
+            customer.setDocumentType( Enum.valueOf( DocumentType.class, customerDTO.getDocumentType() ) );
         }
-        customer.documentNumber( customerDTO.getDocumentNumber() );
+        customer.setDocumentNumber( customerDTO.getDocumentNumber() );
 
-        return customer.build();
+        return customer;
+    }
+
+    @Override
+    public List<Customer> mapToDomain(List<CustomerDTO> customerDTO) {
+        if ( customerDTO == null ) {
+            return null;
+        }
+
+        List<Customer> list = new ArrayList<Customer>( customerDTO.size() );
+        for ( CustomerDTO customerDTO1 : customerDTO ) {
+            list.add( mapToDomain( customerDTO1 ) );
+        }
+
+        return list;
     }
 
     @Override
@@ -40,15 +54,29 @@ public class CustomerWebMapperImpl implements CustomerWebMapper {
             return null;
         }
 
-        CustomerDTOBuilder customerDTO = CustomerDTO.builder();
+        CustomerDTO customerDTO = new CustomerDTO();
 
-        customerDTO.id( customer.getId() );
-        customerDTO.name( customer.getName() );
+        customerDTO.setId( customer.getId() );
+        customerDTO.setName( customer.getName() );
         if ( customer.getDocumentType() != null ) {
-            customerDTO.documentType( customer.getDocumentType().name() );
+            customerDTO.setDocumentType( customer.getDocumentType().name() );
         }
-        customerDTO.documentNumber( customer.getDocumentNumber() );
+        customerDTO.setDocumentNumber( customer.getDocumentNumber() );
 
-        return customerDTO.build();
+        return customerDTO;
+    }
+
+    @Override
+    public List<CustomerDTO> mapToDto(List<Customer> customer) {
+        if ( customer == null ) {
+            return null;
+        }
+
+        List<CustomerDTO> list = new ArrayList<CustomerDTO>( customer.size() );
+        for ( Customer customer1 : customer ) {
+            list.add( mapToDto( customer1 ) );
+        }
+
+        return list;
     }
 }
