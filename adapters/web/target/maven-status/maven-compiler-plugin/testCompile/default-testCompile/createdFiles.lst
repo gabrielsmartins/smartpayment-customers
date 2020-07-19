@@ -1,0 +1,7 @@
+br/gabrielsmartins/smartpayment/adapters/web/controller/categories/SearchCategoryControllerTest.class
+br/gabrielsmartins/smartpayment/adapters/web/mapper/customers/CustomerWebMapperTest.class
+br/gabrielsmartins/smartpayment/adapters/web/controller/categories/SaveCategoryControllerTest.class
+br/gabrielsmartins/smartpayment/adapters/web/controller/customers/SaveCustomerControllerTest.class
+br/gabrielsmartins/smartpayment/adapters/web/mapper/categories/CategoryWebMapperTest.class
+br/gabrielsmartins/smartpayment/adapters/web/WebApplicationTest.class
+br/gabrielsmartins/smartpayment/adapters/web/controller/customers/SearchCustomerControllerTest.class
