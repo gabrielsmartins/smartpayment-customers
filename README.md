@@ -49,4 +49,4 @@ docker run -it -d -p 8080:8080 gasmartins/smartpayment-customers
 
 ### Demonstration
 
-![Example 1](assets/zipkin)
+![Example 1](assets/zipkin.png)
