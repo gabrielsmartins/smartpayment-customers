@@ -68,7 +68,7 @@ public class SearchCategoryControllerTest {
         when(useCase.findAll()).thenReturn(Arrays.asList(category));
 
 
-        MvcResult mvcResult = this.mockMvc.perform(get("/categories")
+        MvcResult mvcResult = this.mockMvc.perform(get("/v1/categories")
                 .header("Accept", MediaType.APPLICATION_JSON))
                 .andReturn();
 
@@ -93,7 +93,7 @@ public class SearchCategoryControllerTest {
         when(useCase.findById(anyString())).thenReturn(Optional.ofNullable(category));
 
 
-        MvcResult mvcResult = this.mockMvc.perform(get("/categories/" + categoryId)
+        MvcResult mvcResult = this.mockMvc.perform(get("/v1/categories/" + categoryId)
                                                     .header("Accept", MediaType.APPLICATION_JSON))
                                                     .andReturn();
 
@@ -113,7 +113,7 @@ public class SearchCategoryControllerTest {
 
 
 
-        MvcResult mvcResult = this.mockMvc.perform(get("/categories/" + categoryId)
+        MvcResult mvcResult = this.mockMvc.perform(get("/v1/categories/" + categoryId)
                 .header("Accept", MediaType.APPLICATION_JSON))
                 .andReturn();
 

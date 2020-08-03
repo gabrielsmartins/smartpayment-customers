@@ -64,7 +64,7 @@ public class SaveCustomerControllerTest {
 
         String content = objectMapper.writeValueAsString(customerDTO);
 
-        MvcResult mvcResult = mockMvc.perform(post("/customers")
+        MvcResult mvcResult = mockMvc.perform(post("/v1/customers")
                                      .header("Content-type", MediaType.APPLICATION_JSON)
                                      .header("Accept", MediaType.APPLICATION_JSON)
                                      .content(content))

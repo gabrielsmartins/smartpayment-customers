@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/categories")
+@RequestMapping("/v1/categories")
 @AllArgsConstructor
 public class SearchCategoryController {
 

@@ -78,7 +78,7 @@ public class SearchCustomerControllerTest {
         when(useCase.findAll()).thenReturn(Arrays.asList(customer));
 
 
-        MvcResult mvcResult = this.mockMvc.perform(get("/customers")
+        MvcResult mvcResult = this.mockMvc.perform(get("/v1/customers")
                 .header("Accept", MediaType.APPLICATION_JSON))
                 .andReturn();
 
@@ -111,7 +111,7 @@ public class SearchCustomerControllerTest {
         when(useCase.findById(anyString())).thenReturn(Optional.ofNullable(customer));
 
 
-        MvcResult mvcResult = this.mockMvc.perform(get("/customers/" + customerId)
+        MvcResult mvcResult = this.mockMvc.perform(get("/v1/customers/" + customerId)
                 .header("Accept", MediaType.APPLICATION_JSON))
                 .andReturn();
 
@@ -131,7 +131,7 @@ public class SearchCustomerControllerTest {
 
 
 
-        MvcResult mvcResult = this.mockMvc.perform(get("/customers/" + customerId)
+        MvcResult mvcResult = this.mockMvc.perform(get("/v1/customers/" + customerId)
                 .header("Accept", MediaType.APPLICATION_JSON))
                 .andReturn();
 

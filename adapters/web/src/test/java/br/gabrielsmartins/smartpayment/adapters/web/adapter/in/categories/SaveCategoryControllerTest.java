@@ -61,7 +61,7 @@ public class SaveCategoryControllerTest {
 
         String content = this.objectMapper.writeValueAsString(categoryDTO);
 
-        MvcResult result = mockMvc.perform(post("/categories")
+        MvcResult result = mockMvc.perform(post("/v1/categories")
                                     .header("Content-type", MediaType.APPLICATION_JSON)
                                     .header("Accept", MediaType.APPLICATION_JSON)
                                     .content(content))

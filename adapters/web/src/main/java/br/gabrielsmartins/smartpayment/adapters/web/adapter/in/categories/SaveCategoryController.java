@@ -13,7 +13,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping("/categories")
+@RequestMapping("/v1/categories")
 @AllArgsConstructor
 public class SaveCategoryController {
 

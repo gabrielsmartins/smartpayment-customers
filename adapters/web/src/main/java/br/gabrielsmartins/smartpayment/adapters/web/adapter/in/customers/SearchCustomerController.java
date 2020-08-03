@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/v1/customers")
 @AllArgsConstructor
 public class SearchCustomerController {
 
