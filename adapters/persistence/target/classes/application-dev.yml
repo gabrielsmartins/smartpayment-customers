@@ -1,8 +1,5 @@
 spring:
-    data:
-        mongodb:
-            #authentication-database: admin
-            host: 127.0.0.1
-            #password:
-            port: 27017
-            #username:
+    data.mongodb:
+        host: 127.0.0.1
+        port: 27017
+        uri: mongodb://127.0.0.1:27017

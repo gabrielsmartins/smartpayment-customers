@@ -29,6 +29,7 @@ docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no tutum/mongodb
 `
 
 3. Build Image
+
 `
 docker build -t gasmartins/smartpayment-customers .
 `
@@ -45,3 +46,7 @@ docker run -it -d -p 8080:8080 gasmartins/smartpayment-customers
 * [SmartPayment Payments](https://github.com/gabrielsmartins/smartpayment-payments)
 * [SmartPayment Account](https://github.com/gabrielsmartins/smartpayment-account)
 * [SmartPayment Credit Card](https://github.com/gabrielsmartins/smartpayment-credit-card)
+
+### Demonstration
+
+![Example 1](assets/zipkin)
