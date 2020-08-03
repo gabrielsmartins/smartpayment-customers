@@ -11,11 +11,11 @@
 ### Running with Docker
 
 `
-docker build -t gasmartins94/smartpayment-customers .
+docker build -t gasmartins/smartpayment-customers .
 `
 
 `
-docker run -it -d -p 8080:8080 gasmartins94/smartpayment-customers
+docker run -it -d -p 8080:8080 gasmartins/smartpayment-customers
 `
 
 ### Other Projects
