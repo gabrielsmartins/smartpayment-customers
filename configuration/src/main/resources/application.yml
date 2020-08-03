@@ -3,4 +3,4 @@ spring:
     sampler:
       probability: 1.0
   zipkin:
-    baseUrl: http://localhost:9411/
+    baseUrl: http://127.0.0.1:9411/
