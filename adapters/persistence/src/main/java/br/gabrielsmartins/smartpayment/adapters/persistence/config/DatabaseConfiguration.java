@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.MongoDatabaseFactory;
-import org.springframework.data.mongodb.core.MongoClientFactoryBean;
 import org.springframework.data.mongodb.core.convert.DbRefResolver;
 import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
 import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
@@ -28,14 +27,6 @@ public class DatabaseConfiguration {
         // Don't save _class to mongo
         mappingConverter.setTypeMapper(new DefaultMongoTypeMapper(null));
         return mappingConverter;
-    }
-
-    @Bean
-    public MongoClientFactoryBean mongoClientFactory() {
-        MongoClientFactoryBean factory = new MongoClientFactoryBean();
-        factory.setHost(host);
-        factory.setPort(port);
-        return factory;
     }
 
 }

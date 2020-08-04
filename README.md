@@ -61,7 +61,7 @@ docker build -t gasmartins/smartpayment-customers .
 4. Run
 
 `
-docker run -it -d -p 8080:8080 gasmartins/smartpayment-customers
+docker run -it -d -p 8080:8080 --network host gasmartins/smartpayment-customers
 `
 
 ### Other Projects
