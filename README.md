@@ -5,7 +5,7 @@
 ### Running with Maven
 
 `
-./mvnw spring-boot:run -Dspring.profiles.active=<PROFILE>'
+./mvnw spring-boot:run -Dspring-boot.run.profiles=<PROFILE>'
 `
 
 ### Running with Docker

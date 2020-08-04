@@ -1,5 +1,6 @@
 spring:
     autoconfigure:
         exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
-    data.mongodb:
-        database: customersdb
+    data:
+        mongodb:
+            database: customersdb
