@@ -71,6 +71,10 @@ docker run -it -d -p 8080:8080 gasmartins/smartpayment-customers
 * [SmartPayment Account](https://github.com/gabrielsmartins/smartpayment-account)
 * [SmartPayment Credit Card](https://github.com/gabrielsmartins/smartpayment-credit-card)
 
+### References
+
+[Spring Cloud Sleuth Using Zipkin and Jaeger](https://github.com/anoophp777/spring-webflux-jaegar-log4j2)
+
 ### Demonstration
 
 #### Using Zipkin
