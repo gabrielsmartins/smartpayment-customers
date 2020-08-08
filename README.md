@@ -2,67 +2,23 @@
 
 
 
-### Running with Maven
+### How to Run
+
+1. Run the following command
 
 `
-./mvnw spring-boot:run -Dspring-boot.run.profiles=<PROFILE>'
+docker-compose up --build
 `
 
-### Running with Docker
-
-1. Start Zipkin or Jaeger
-
-#### For Zipkin
+2 . Send a request 
 
 `
-docker pull openzipkin/zipkin
+curl -d '{"description":"GOLD"}' -H "Content-Type: application/json" -X POST localhost:8080/v1/categories
 `
+3. Open the Jaeger Console
 
-`
-docker run -d -p 9411:9411 openzipkin/zipkin
-`
+http://localhost:16686/
 
-#### For Jaeger
-
-`
-docker pull jaegertracing/all-in-one
-`
-
-`
-docker run -d --name jaeger -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p 5775:5775/udp -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 14268:14268 -p 9411:9411 jaegertracing/all-in-one
-`
-
-2. Start Zipkin
-
-`
-docker pull openzipkin/zipkin
-`
-
-`
-docker run -d -p 9411:9411 openzipkin/zipkin
-`
-
-
-2. Start MongoDB
-`
-docker pull tutum/mongodb
-`
-
-`
-docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no tutum/mongodb
-`
-
-3. Build Image
-
-`
-docker build -t gasmartins/smartpayment-customers .
-`
-
-4. Run
-
-`
-docker run -it -d -p 8080:8080 --network host gasmartins/smartpayment-customers
-`
 
 ### Other Projects
 
