@@ -10,7 +10,7 @@
 docker-compose up --build
 `
 
-2 . Send a request 
+2. Send a request 
 
 `
 curl -d '{"description":"GOLD"}' -H "Content-Type: application/json" -X POST localhost:8080/v1/categories
