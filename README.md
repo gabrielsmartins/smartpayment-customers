@@ -15,6 +15,7 @@ docker-compose up --build
 `
 curl -d '{"description":"GOLD"}' -H "Content-Type: application/json" -X POST localhost:8080/v1/categories
 `
+
 3. Open the Jaeger Console
 
 http://localhost:16686/
