@@ -1,4 +1,6 @@
 spring:
+    profiles:
+        active: ${activatedProperties}
     data:
         mongodb:
             database: customersdb
