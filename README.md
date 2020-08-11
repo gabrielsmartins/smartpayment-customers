@@ -14,7 +14,7 @@ This project is an example implementation of a hexagonal architecture using the 
 1. Build Project
 
 `
-mvn install
+./mvnw install
 `
 
 2. Run container services
@@ -41,7 +41,7 @@ docker run -d --name jaegerserver -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p 5775:577
 `
 
 `
-mvn spring-boot:run -Plocal "-Dspring.profiles.active=local"
+./mvnw spring-boot:run -Plocal "-Dspring.profiles.active=local"
 `
 
 
