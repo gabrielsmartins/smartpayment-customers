@@ -12,6 +12,7 @@ build-project:
   retry: 2
   before_script:
     - chmod +x mvnw
+    - chmod +x .mvn
   script:
     - ./mvnw compile
 
@@ -23,6 +24,7 @@ test-project:
     - build-project
   before_script:
     - chmod +x mvnw
+    - chmod +x .mvn
   script:
     - ./mvnw test
 
