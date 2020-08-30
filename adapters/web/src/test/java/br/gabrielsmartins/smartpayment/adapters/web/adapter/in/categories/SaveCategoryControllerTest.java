@@ -4,6 +4,7 @@ package br.gabrielsmartins.smartpayment.adapters.web.adapter.in.categories;
 import br.gabrielsmartins.smartpayment.adapters.web.dto.categories.CategoryDTO;
 import br.gabrielsmartins.smartpayment.adapters.web.mapper.categories.CategoryWebMapper;
 import br.gabrielsmartins.smartpayment.adapters.web.mapper.categories.CategoryWebMapperImpl;
+import br.gabrielsmartins.smartpayment.application.domain.categories.Category;
 import br.gabrielsmartins.smartpayment.application.ports.input.categories.SaveCategoryUseCase;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -26,11 +27,13 @@ import org.springframework.test.web.servlet.MvcResult;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(SaveCategoryController.class)
-@Import(CategoryWebMapperImpl.class)
+@Import({CategoryWebMapperImpl.class})
 public class SaveCategoryControllerTest {
 
     @Autowired
@@ -58,6 +61,13 @@ public class SaveCategoryControllerTest {
                                             .withId(UUID.randomUUID().toString())
                                             .withDescription("GOLD")
                                             .build();
+
+        Category categoryMock = Category.builder()
+                .withId(UUID.randomUUID().toString())
+                .withDescription("GOLD")
+                .build();
+
+        when(useCase.save(any(Category.class))).thenReturn(categoryMock);
 
         String content = this.objectMapper.writeValueAsString(categoryDTO);
 

@@ -21,11 +21,11 @@ public class SaveCategoryController {
     private CategoryWebMapper mapper;
 
     @PostMapping
-    public ResponseEntity<?> save(@RequestHeader HttpHeaders httpHeaders, @RequestBody CategoryDTO categoryDTO){
+    public ResponseEntity<CategoryDTO> save(@RequestHeader HttpHeaders httpHeaders, @RequestBody CategoryDTO categoryDTO){
         Category category = mapper.mapToDomain(categoryDTO);
         Category savedCategory = useCase.save(category);
         CategoryDTO categoryDTOResponse = mapper.mapToDTO(savedCategory);
-        URI uri = ServletUriComponentsBuilder.fromCurrentServletMapping().path("/{id}").buildAndExpand(categoryDTOResponse.getId()).toUri();
-        return ResponseEntity.created(uri).body(categoryDTOResponse);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(categoryDTOResponse.getId()).toUri();
+        return ResponseEntity.created(location).body(categoryDTOResponse);
     }
 }

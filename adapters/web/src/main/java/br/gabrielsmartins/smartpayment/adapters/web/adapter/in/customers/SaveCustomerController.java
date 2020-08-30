@@ -22,12 +22,12 @@ public class SaveCustomerController {
     private CustomerWebMapper mapper;
 
     @PostMapping
-    public ResponseEntity<?> save(@RequestHeader HttpHeaders httpHeaders, @RequestBody CustomerDTO customerDTORequest){
+    public ResponseEntity<CustomerDTO> save(@RequestHeader HttpHeaders httpHeaders, @RequestBody CustomerDTO customerDTORequest){
         Customer customer = mapper.mapToDomain(customerDTORequest);
         Customer savedCustomer = useCase.save(customer);
         CustomerDTO savedCustomerResponseDTO = mapper.mapToDto(savedCustomer);
-        URI uri = ServletUriComponentsBuilder.fromCurrentServletMapping().path("/{id}").buildAndExpand(savedCustomerResponseDTO.getId()).toUri();
-        return ResponseEntity.created(uri).body(savedCustomerResponseDTO);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(savedCustomerResponseDTO.getId()).toUri();
+        return ResponseEntity.created(location).body(savedCustomerResponseDTO);
     }
 
 

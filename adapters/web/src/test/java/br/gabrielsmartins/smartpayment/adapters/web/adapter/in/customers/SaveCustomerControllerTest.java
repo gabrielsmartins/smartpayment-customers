@@ -3,6 +3,8 @@ package br.gabrielsmartins.smartpayment.adapters.web.adapter.in.customers;
 import br.gabrielsmartins.smartpayment.adapters.web.dto.customers.CustomerDTO;
 import br.gabrielsmartins.smartpayment.adapters.web.mapper.customers.CustomerWebMapper;
 import br.gabrielsmartins.smartpayment.adapters.web.mapper.customers.CustomerWebMapperImpl;
+import br.gabrielsmartins.smartpayment.application.domain.categories.Category;
+import br.gabrielsmartins.smartpayment.application.domain.customers.Customer;
 import br.gabrielsmartins.smartpayment.application.domain.enums.DocumentType;
 import br.gabrielsmartins.smartpayment.application.ports.input.customers.SaveCustomerUseCase;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -26,6 +28,8 @@ import org.springframework.test.web.servlet.MvcResult;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @ExtendWith(SpringExtension.class)
@@ -61,6 +65,19 @@ public class SaveCustomerControllerTest {
                                                 .withDocumentNumber("00000001000101")
                                                 .withDocumentType(DocumentType.CNPJ.name())
                                                 .build();
+
+        Customer customerMock = Customer.builder()
+                                .withId(UUID.randomUUID().toString())
+                                .withCategory(Category.builder()
+                                        .withId(UUID.randomUUID().toString())
+                                        .withDescription("Gold")
+                                        .build())
+                                .withName("Foo")
+                                .withDocumentNumber("00000001000101")
+                                .withDocumentType(DocumentType.CNPJ)
+                                .build();
+
+        when(useCase.save(any(Customer.class))).thenReturn(customerMock);
 
         String content = objectMapper.writeValueAsString(customerDTO);
 
