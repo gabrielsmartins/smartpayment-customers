@@ -10,6 +10,8 @@ build-project:
   image: maven:latest
   stage: build
   retry: 2
+  before_script:
+    - chmod +x mvnw
   script:
     - ./mvnw compile
 
@@ -19,6 +21,8 @@ test-project:
   retry: 2
   dependencies:
     - build-project
+  before_script:
+    - chmod +x mvnw
   script:
     - ./mvnw test
 
