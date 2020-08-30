@@ -15,6 +15,33 @@
     <properties>
         <embedded.mongo>2.2.0</embedded.mongo>
     </properties>
+	
+	<profiles>
+		<profile>
+		<id>dev</id>
+			<properties>
+				<activatedProperties>dev</activatedProperties>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<dependencies>
+			</dependencies>
+		</profile>
+		<profile>
+			<id>local</id>
+			<properties>
+				<activatedProperties>local</activatedProperties>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>de.flapdoodle.embed</groupId>
+					<artifactId>de.flapdoodle.embed.mongo</artifactId>
+					<version>${embedded.mongo}</version>
+				</dependency>
+			</dependencies>
+		</profile>
+	</profiles>
 
     <dependencies>
         <dependency>

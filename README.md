@@ -1,68 +1,49 @@
 # Example Implementation of a Hexagonal Architecture
 
+This project is an example implementation of a hexagonal architecture using the following technologies:
 
+- JDK 11
+- Maven
+- MongoDB
+- Spring Boot
+- Spring Cloud Sleuth
+- Jaeger
 
-### Running with Maven
+### How to Run
 
-`
-./mvnw spring-boot:run -Dspring-boot.run.profiles=<PROFILE>'
-`
-
-### Running with Docker
-
-1. Start Zipkin or Jaeger
-
-#### For Zipkin
-
-`
-docker pull openzipkin/zipkin
-`
+1. Build Project
 
 `
-docker run -d -p 9411:9411 openzipkin/zipkin
+./mvnw install
 `
 
-#### For Jaeger
+2. Run container services
 
 `
-docker pull jaegertracing/all-in-one
+docker-compose up --build
 `
 
-`
-docker run -d --name jaeger -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p 5775:5775/udp -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 14268:14268 -p 9411:9411 jaegertracing/all-in-one
-`
-
-2. Start Zipkin
+3. Send a request 
 
 `
-docker pull openzipkin/zipkin
+curl -d '{"description":"GOLD"}' -H "Content-Type: application/json" -X POST localhost:8080/v1/categories
 `
 
-`
-docker run -d -p 9411:9411 openzipkin/zipkin
-`
+4. Open the Jaeger Console: http://localhost:16686/
 
 
-2. Start MongoDB
+### Run with local profile
+
+1 . Run Jaeger Container
+
 `
-docker pull tutum/mongodb
+docker run -d --name jaegerserver -e COLLECTOR_ZIPKIN_HTTP_PORT=9411 -p 5775:5775/udp -p 6831:6831/udp -p 6832:6832/udp -p 5778:5778 -p 16686:16686 -p 14268:14268 -p 9411:9411 jaegertracing/all-in-one:1.8
 `
 
 `
-docker run -d -p 27017:27017 -p 28017:28017 -e AUTH=no tutum/mongodb
+./mvnw spring-boot:run -Plocal "-Dspring.profiles.active=local"
 `
 
-3. Build Image
-
-`
-docker build -t gasmartins/smartpayment-customers .
-`
-
-4. Run
-
-`
-docker run -it -d -p 8080:8080 --network host gasmartins/smartpayment-customers
-`
 
 ### Other Projects
 
