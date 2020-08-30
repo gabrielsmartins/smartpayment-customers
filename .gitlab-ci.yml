@@ -1,0 +1,39 @@
+image: docker:stable
+
+stages:
+  - build
+  - test
+  - build-image
+  - deploy
+
+build-project:
+  image: gradle:latest
+  stage: build
+  retry: 2
+  script:
+    - ./gradlew --build-cache assemble
+
+test-project:
+  image: gradle:latest
+  stage: test
+  retry: 2
+  dependencies:
+    - build-project
+  script:
+    - ./gradlew check
+
+build-docker:
+  stage: build-image
+  retry: 2
+  dependencies:
+    - test-project
+  services:
+    - docker:dind
+  before_script:
+    - docker info
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
+  tags:
+    - executor-task
+  script:
+    - docker build -t gasmartins/smartpayment-customers .
+    - docker push gasmartins/smartpayment-customers:latest
