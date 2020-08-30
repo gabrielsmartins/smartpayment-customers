@@ -31,7 +31,7 @@ test-project:
 
 build-project:
   image: maven:latest
-  stage: test
+  stage: build
   retry: 2
   dependencies:
     - test-project
