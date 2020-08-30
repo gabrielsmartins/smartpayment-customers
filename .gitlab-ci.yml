@@ -7,20 +7,20 @@ stages:
   - deploy
 
 build-project:
-  image: gradle:latest
+  image: maven:latest
   stage: build
   retry: 2
   script:
-    - ./gradlew --build-cache assemble
+    - ./mvnw compile
 
 test-project:
-  image: gradle:latest
+  image: maven:latest
   stage: test
   retry: 2
   dependencies:
     - build-project
   script:
-    - ./gradlew check
+    - ./mvnw test
 
 build-docker:
   stage: build-image
