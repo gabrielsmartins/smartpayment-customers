@@ -11,6 +11,7 @@ stages:
   - deploy
 
 compile-project:
+  image: maven:latest
   stage: compile
   retry: 2
   before_script:
@@ -20,6 +21,7 @@ compile-project:
     - ./mvnw compile
 
 test-project:
+  image: maven:latest
   stage: test
   retry: 2
   dependencies:
@@ -31,6 +33,7 @@ test-project:
     - ./mvnw test
 
 build-project:
+  image: maven:latest
   stage: build
   retry: 2
   dependencies:
