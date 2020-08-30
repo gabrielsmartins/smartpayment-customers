@@ -1,14 +1,15 @@
 image: docker:stable
 
 stages:
-  - build
+  - compile
   - test
+  - build
   - build-image
   - deploy
 
-build-project:
+compile-project:
   image: maven:latest
-  stage: build
+  stage: compile
   retry: 2
   before_script:
     - chmod +x mvnw
@@ -21,18 +22,30 @@ test-project:
   stage: test
   retry: 2
   dependencies:
-    - build-project
+    - compile-project
   before_script:
     - chmod +x mvnw
     - chmod +x .mvn
   script:
     - ./mvnw test
 
+build-project:
+  image: maven:latest
+  stage: test
+  retry: 2
+  dependencies:
+    - test-project
+  before_script:
+    - chmod +x mvnw
+    - chmod +x .mvn
+  script:
+    - ./mvnw clean install -DskipTests
+
 build-docker:
   stage: build-image
   retry: 2
   dependencies:
-    - test-project
+    - build-project
   services:
     - docker:dind
   before_script:
