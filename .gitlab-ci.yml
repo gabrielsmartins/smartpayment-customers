@@ -3,6 +3,11 @@ image: docker:stable
 services:
   - docker:dind
 
+# Cache downloaded dependencies and plugins between builds.
+cache:
+  paths:
+    - /root/.m2/repository/
+
 stages:
   - compile
   - test

@@ -1,0 +1,4 @@
+--patch-module
+br.gabrielsmartins.smartpayment.adapters.web=_
+--add-reads
+br.gabrielsmartins.smartpayment.adapters.web=ALL-UNNAMED

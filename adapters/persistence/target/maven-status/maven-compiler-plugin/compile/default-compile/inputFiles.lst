@@ -6,6 +6,7 @@
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/persistence/src/main/java/br/gabrielsmartins/smartpayment/adapters/persistence/mapper/customers/CustomerPersistenceMapper.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/persistence/src/main/java/br/gabrielsmartins/smartpayment/adapters/persistence/service/categories/ISaveCategoryPersistenceService.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/persistence/src/main/java/br/gabrielsmartins/smartpayment/adapters/persistence/entity/customers/CustomerEntity.java
+/home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/persistence/src/main/java/module-info.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/persistence/src/main/java/br/gabrielsmartins/smartpayment/adapters/persistence/repository/categories/CategoryRepository.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/persistence/src/main/java/br/gabrielsmartins/smartpayment/adapters/persistence/adapter/customers/SaveCustomerPersistenceAdapter.java
 /home/gabriel/Documents/workspace-spring-tool-suite-4-4.6.1.RELEASE/smartpayment-customers/adapters/persistence/src/main/java/br/gabrielsmartins/smartpayment/adapters/persistence/adapter/categories/SaveCategoryPersistenceAdapter.java

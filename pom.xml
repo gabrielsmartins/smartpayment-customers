@@ -163,6 +163,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven-plugin.version}</version>
                 <configuration>
+                    <release>11</release>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
                     <annotationProcessorPaths>
@@ -188,6 +189,9 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
                     <version>${maven.surefire.version}</version>
+                    <configuration>
+                        <forkCount>0</forkCount>
+                    </configuration>
                 </plugin>
 
                 <plugin>

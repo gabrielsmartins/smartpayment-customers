@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: br.gabrielsmartins.smartpayment.adapters.persistence.repository.customers.CustomerRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.6 s - in br.gabrielsmartins.smartpayment.adapters.persistence.repository.customers.CustomerRepositoryTest

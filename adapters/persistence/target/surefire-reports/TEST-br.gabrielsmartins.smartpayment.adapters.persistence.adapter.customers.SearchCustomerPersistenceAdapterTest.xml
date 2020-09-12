@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="br.gabrielsmartins.smartpayment.adapters.persistence.adapter.customers.SearchCustomerPersistenceAdapterTest" time="0.026" tests="2" errors="0" skipped="0" failures="0">
+  <properties/>
+  <testcase name="givenCustomersWhenExistsThenReturnCustomerList" classname="br.gabrielsmartins.smartpayment.adapters.persistence.adapter.customers.SearchCustomerPersistenceAdapterTest" time="0.024"/>
+  <testcase name="givenCustomerIdWhenExistsThenReturnCustomer" classname="br.gabrielsmartins.smartpayment.adapters.persistence.adapter.customers.SearchCustomerPersistenceAdapterTest" time="0.002"/>
+</testsuite>
