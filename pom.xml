@@ -33,7 +33,7 @@
 
         <junit-jupiter-api.version>5.6.2</junit-jupiter-api.version>
         <junit-platform.version>1.6.2</junit-platform.version>
-        <assertj.version>3.16.1</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
         <mockito.version>3.3.3</mockito.version>
         <archunit-version>0.14.1</archunit-version>
         <logstash.version>6.4</logstash.version>
